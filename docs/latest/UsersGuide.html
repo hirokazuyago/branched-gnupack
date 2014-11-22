@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=Shift_JIS" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="description" content="gnupackはアーカイブ展開のみで即座に cygwinと emacsが使える環境を提供します．">
+    <meta name="keyword" content="gnupack,emacs,gvim,cygwin,windows">
+    <title>gnupack Users Guide</title>
+    <link href="./css/guide.css"  rel="stylesheet" type="text/css" />
+    <link href="./css/common.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="top">
+        <div id="header">
+            <div id="header_left"><p>gnupack is package that quickly start cygwin and emacs.</p></div>
+            <div id="header_right"><a href="http://sourceforge.jp/projects/gnupack/"><div class="sfjp"></div></a></div>
+            <div id="header_bottom"><h1>gnupack Users Guide (2013-01-03)</h1></div>
+        </div><!-- / #header -->
+        <div id="content">
+            <div id="menu">
+                <div class="section">
+                    <h2>目次</h2>
+                    <div class="body">
+                        <dl>
+                            <dd> <span class="item">■</span> <a href="UsersGuide.html">トップページ</a></dd>
+                            <dd><dl></dl></dd>
+                            <dd> <span class="item">■</span> <a href="UsersGuide_introduction.html">はじめに</a></dd>
+                            <dd>
+                                <dl>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_introduction.html#_whatis">gnupackとは</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_introduction.html#_install">インストール方法</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_introduction.html#_uninstall">アンインストール方法</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_introduction.html#_restriction">制約事項</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_introduction.html#_website">関連Webサイトと連絡先</a></dd>
+                                </dl>
+                            </dd>
+                            <dd><dl></dl></dd>
+                            <dd> <span class="item">■</span> <a href="UsersGuide_download.html">ダウンロード</a></dd>
+                            <dd>
+                                <dl>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_download.html#_download_gnupack">gnupack</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_download.html#_download_gnupack_pretest">gnupack pretest</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_download.html#_download_emacs">emacs for gnupack</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_download.html#_download_emacs_pretest">emacs for gnupack pretest</a></dd>
+                                </dl>
+                            </dd>
+                            <dd><dl></dl></dd>
+                            <dd> <span class="item">■</span> <a href="UsersGuide_description.html">パッケージ詳細</a></dd>
+                            <dd>
+                                <dl>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_description.html#_gnupack_startup">gnupack startup</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_description.html#_distribute_software">再配布ソフトウェア</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_description.html#_package_version">配布パッケージのバージョン</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_description.html#_cygwin_package">cygwinパッケージ</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_description.html#_directory_list">ディレクトリ構成</a></dd>
+                                </dl>
+                            </dd>
+                            <dd><dl></dl></dd>
+                            <dd> <span class="item">■</span> <a href="UsersGuide_customize.html">カスタマイズ</a></dd>
+                            <dd>
+                                <dl>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_customize.html#_desc_config">設定ファイルの概要</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_customize.html#_customize_env">環境変数の設定</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_customize.html#_customize_mnt">マウントポイントの設定</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_customize.html#_customize_font">プライベートフォントの設定</a></dd>
+                                </dl>
+                            </dd>
+                            <dd><dl></dl></dd>
+                            <dd> <span class="item">■</span> <a href="UsersGuide_tips.html">便利な使い方</a></dd>
+                            <dd>
+                                <dl>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_tips.html#_tips_update_cygwin">cygwinパッケージの追加方法</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_tips.html#_tips_start_bash">ディレクトリ指定で bash起動</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_tips.html#_tips_access_clipboard">bashからクリップボードを操作</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_tips.html#_tips_access_desktop">bashからデスクトップにアクセス</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_tips.html#_tips_prompt_color">bashのプロンプト色を変更</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_tips.html#_tips_emacs_theme">emacsのcolor-themeを変更</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_tips.html#_gdi_install">gdi++の導入・設定</a></dd>
+                                </dl>
+                            </dd>
+                            <dd><dl></dl></dd>
+                            <dd> <span class="item">■</span> <a href="UsersGuide_technical_info.html">技術情報</a></dd>
+                            <dd>
+                                <dl>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_technical_info.html#_about_mintty_exe">mintty.exeの動作仕様</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_technical_info.html#_about_emacs_exe">emacs.exeの動作仕様</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_technical_info.html#_about_gvim_exe">gvim.exeの動作仕様</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_technical_info.html#_about_cygwin_env">CYGWIN環境変数について</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_technical_info.html#_about_etc_fstab">/etc/fstabについて</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_technical_info.html#_cygwin_mount_point">マウントポイントについて</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_technical_info.html#_about_emacs_patch">emacsのパッチについて</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_technical_info.html#_color_emacs">定義済み配色一覧</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_technical_info.html#_color_bash">bashで利用可能な配色一覧</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_technical_info.html#_color_theme">color-themeのテーマ一覧</a></dd>
+                                </dl>
+                            </dd>
+                            <dd><dl></dl></dd>
+                            <dd> <span class="item">■</span> <a href="UsersGuide_build_procedure.html">ビルド記録</a></dd>
+                            <dd>
+                                <dl>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_build_procedure.html#_emacs">emacs 23.4.1</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_build_procedure.html#_emacs_pretest">emacs 24.0.93 pretest</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_build_procedure.html#_gvim">gvim 7.3.401</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_build_procedure.html#_nkf">nkf 2.1.2</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_build_procedure.html#_global">global 6.1</a></dd>
+                                </dl>
+                            </dd>
+                            <dd><dl></dl></dd>
+                            <dd> <span class="item">■</span> <a href="UsersGuide_release_note.html">リリースノート</a></dd>
+                            <dd>
+                                <dl>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2013-01-03">2013-01-03 (Version 11.00)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2012-10-14">2012-10-14 (Version 10.02)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2012-09-23">2012-09-23 (Version 10.01)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2012-09-09">2012-09-09 (Version 10.00)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2012-07-29">2012-07-29 (Version 9.01)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2012-07-15">2012-07-15 (Version 9.00)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2012-04-15">2012-04-15 (Version 8.00)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2012-01-20">2012-01-20 (Version 7.03)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-11-05">2011-11-05 (Version 7.02)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-09-23">2011-09-23 (Version 7.01)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-07-25">2011-07-25 (Version 7.00)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-05-14">2011-05-14 (Version 6.02)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-04-28">2011-04-28 (Version 6.01)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-04-02">2011-04-02 (Version 6.00)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-03-20">2011-03-20 (Version 5.07)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-03-13">2011-03-13</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-03-05">2011-03-05 (Version 5.06)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-02-26">2011-02-26 (Version 5.05)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-02-19">2011-02-19 (Version 5.04)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-02-13">2011-02-13 (Version 5.03)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-01-22">2011-01-22 (Version 5.02)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-01-16">2011-01-16</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-01-15">2011-01-15</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2011-01-08">2011-01-08</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-12-26">2010-12-26 (Version 5.01)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-12-12">2010-12-12 (Version 5.00)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-10-24">2010-10-24 (Version 4.09a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-10-10">2010-10-10 (Version 4.08a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-10-02">2010-10-02 (Version 4.07a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-09-26">2010-09-26 (Version 4.06a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-09-19">2010-09-19 (Version 4.05a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-09-11">2010-09-11 (Version 4.04a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-08-14">2010-08-14 (Version 4.03a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-08-08">2010-08-08</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-07-30">2010-07-30</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-07-25">2010-07-25 (Version 4.02a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-07-03">2010-07-03 (Version 4.01a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-06-27">2010-06-27</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-06-19">2010-06-19 (Version 4.00a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-06-12">2010-06-12 (Version 3.01a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-05-30">2010-05-30 (Version 3.00a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-05-08">2010-05-08</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-04-18">2010-04-18 (Version 2.00a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-04-07">2010-04-07</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-03-21">2010-03-21 (Version 1.02a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-03-14">2010-03-14 (Version 1.01a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2010-03-07">2010-03-07 (Version 1.00a)</a></dd>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_release_note.html#_2009-12-27">2009-12-27 (Version 0.01a)</a></dd>
+                                </dl>
+                            </dd>
+                            <dd><dl></dl></dd>
+                            <dd> <span class="item">■</span> <a href="UsersGuide_ntemacs_build_history.html">NTEmacs Build History</a></dd>
+                            <dd>
+                                <dl>
+                                    <dd> <span class="item">▼</span> <a href="UsersGuide_ntemacs_build_history.html#_about_this_page">本ページについて</a></dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </div><!-- / #body -->
+                </div><!-- / #section -->
+            </div><!-- / #menu -->
+            <div id="main">
+                <div class="warning">
+                    <h2>最初にお読みください．</h2>
+                    <div class="logo"></div>
+                    <div class="body_warning"><p>　\gnupackはアーカイブ展開のみで即座に cygwinと emacsが使える環境を提供します．\gnupackの配布ライセンスは GPLv2です．</p><p>　\開発者の動作確認は WindowsXP 32bit環境のみになっています．Windows95/98/98SE/Meは動作しない可能性があります．Windows Vista以降の OSバージョンについては動作する可能性はありますが，サポート外になります．gnupackのバグ改修や機能追加等のバージョンアップは<strong>本パッケージの開発者の対応可能な範囲内，かつ開発者の作業ペースにて行わせていただきます．</strong></p><p>　最新の gnupack Users Guideは <a href="http://gnupack.sourceforge.jp/docs/latest/UsersGuide.html">http://gnupack.sourceforge.jp/docs/latest/UsersGuide.html</a>を参照ください．なお，本ページはFirefox 6.0（画面幅：950px，フォント：MeiryoKe_PGothic/MeiryoKe_PGothic 12pt）を基準にデザインしています．その他のブラウザで正しく表示できない可能性があります．</p><br /></div>
+                </div><!-- /warning -->
+                <div class="section">
+                    <h2>最新情報</h2>
+                    <div class="body">
+                        <h4>gnupackのバージョン情報</h4>
+                        <pre class="scroll"><strong>2013-01-03，gnupack 11.00にバージョンアップしました．</strong></pre>
+                        <h4>gnupackの改版内容</h4>
+                        <pre class="scroll">■バグ改修・機能改善
+  - globalを ctags対応したバイナリに変更．
+
+■パッケージ構成変更
+  - cygwinの treeを追加．
+  - cygwinの rsyncを追加．
+  - cygwinの ctagsを追加．
+  - ディレクトリ構成 %INST_DIR%\app\libs\gnutls4winを %INST_DIR%\app\libs\gnutlsに変更．
+
+■バージョンアップ
+  - cygwinの _autorebaseを 000182-1にバージョンアップ．
+  - cygwinの _update-info-dirを 01094-1にバージョンアップ．
+  - cygwinを 1.7.17-1にバージョンアップ．
+  - cygwinの libblkid1を 2.21.2-1にバージョンアップ．
+  - cygwinの libcom_err2を 1.42.6-1にバージョンアップ．
+  - cygwinの libuuid1を 2.21.2-1にバージョンアップ．
+  - cygwinの tzcodeを 2012j-1にバージョンアップ．
+  - cygwinの util-linuxを 2.21.2-1にバージョンアップ．
+  - emacsを 24.2（20121208版）にバージョンアップ．
+  - emacsビルド用ライブラリの expatを 2.1.0-1にバージョンアップ．
+  - emacsビルド用ライブラリの freetypeを 2.4.10-1にバージョンアップ．
+  - emacsビルド用ライブラリの jpegを 8d-1にバージョンアップ．
+  - emacsビルド用ライブラリの libpngを 1.4.12-1にバージョンアップ．
+  - emacsビルド用ライブラリの libxml2を 2.9.0-1にバージョンアップ．
+  - emacsビルド用ライブラリの gnutlsを 3.1.5にバージョンアップ．
+  - gvimを 7.3.762にバージョンアップ．
+  - globalを 6.2.7にバージョンアップ．
+</pre>
+                        <h4>gnupack Users Guideの改版内容</h4>
+                        <pre class="scroll">■はじめに
+  - cygwin版 treeバンドルに伴い「gnupackとは」のtreeのリンクを削除．
+
+■ダウンロード
+  - emacs 24.2 (2012-12-01)のダウンロード先を追加．
+  - emacs 24.2 (2012-12-08)のダウンロード先を追加．
+
+■パッケージ詳細
+  - 再配布ソフトウェアにおける emacs patchに IME2010関連パッチのリンクを追加．
+  - 再配布ソフトウェアにおける emacs patchに ATOK関連パッチのリンクを追加．
+  - 再配布ソフトウェアにおける gvimのリンクを Mercurialのリポジトリに変更．
+  - 再配布ソフトウェアにおける gnutlsのリンクを GNU Officialサイトに変更．
+  - cygwinの構成変更に伴い「cygwinパッケージ」の記述を修正．
+  - ディレクトリ構成 %INST_DIR%\app\libs\gnutls4winを %INST_DIR%\app\libs\gnutlsに変更．
+
+■ビルド情報
+  - cygwin版 treeバンドルに伴い treeのビルド記録を削除．
+  - gnomeライブラリのバンドルに伴い zlib，libxpm，libpng，jpegのビルド記録を削除．
+</pre>
+                    </div><!-- / #body -->
+               </div><!-- / #section -->
+                <div class="section">
+                    <h2>コンテンツ概要</h2>
+                    <div class="body">
+                        <h3><a href="UsersGuide_introduction.html">はじめに</a></h3>
+                        <p class="sentence">gnupackの概要およびインストール方法について記載しています．gnupackをはじめて利用する方はこちらからご覧ください．</p>
+                        <br />
+                        <h3><a href="UsersGuide_download.html">ダウンロード</a></h3>
+                        <p class="sentence">現在リリースしている gnupackおよび emacsのダウンロード情報について記載しています．</p>
+                        <br />
+                        <h3><a href="UsersGuide_description.html">パッケージ詳細</a></h3>
+                        <p class="sentence">gnupackで提供するソフトウェアやディレクトリ構造，パッケージのバージョンの扱いなどを記載しています．</p>
+                        <br />
+                        <h3><a href="UsersGuide_customize.html">カスタマイズ</a></h3>
+                        <p class="sentence">gnupackのカスタマイズの方法について記載しています．</p>
+                        <br />
+                        <h3><a href="UsersGuide_tips.html">便利な使い方</a></h3>
+                        <p class="sentence">gnupackを使う上で知っていると便利な使い方について記載しています．</p>
+                        <br />
+                        <h3><a href="UsersGuide_technical_info.html">技術情報</a></h3>
+                        <p class="sentence">プログラム仕様，再配布ソフトウェアの関連技術情報を記載しています．</p>
+                        <br />
+                        <h3><a href="UsersGuide_build_procedure.html">ビルド記録</a></h3>
+                        <p class="sentence">ソースファイルからビルドしたソフトウェアのビルド手順について記載しています．</p>
+                        <br />
+                        <h3><a href="UsersGuide_release_note.html">リリースノート</a></h3>
+                        <p class="sentence">これまでリリースした gnupackのリリースノートです．</p>
+                        <br />
+                        <h3><a href="UsersGuide_ntemacs_build_history.html">NTEmacs Build History</a></h3>
+                        <p class="sentence">本ページは削除予定です．emacsのダウンロード情報は<a href="UsersGuide_download.html#_download_emacs">ダウンロード</a>，ビルド情報は<a href="UsersGuide_build_procedure.html#_emacs">ビルド記録</a>を参照ください．</p>
+                        <br />
+                    </div><!-- / #body -->
+               </div><!-- / #section -->
+            </div><!-- / #main -->
+        </div><!-- / #content -->
+        <div id="footer">
+            <p>Copyright (C) 2009-2013 k.sugita All rights reserved.</p>
+        </div><!-- / #footer -->
+    </div><!-- / #top -->
+</body>
+</html>

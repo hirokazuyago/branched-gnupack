@@ -1,0 +1,6 @@
+/usr/sbin/update-alternatives \
+	--install /usr/bin/vim vim /usr/bin/vim-nox.exe 10 \
+	--slave   /usr/bin/view view /usr/bin/vim-nox.exe \
+	--slave   /usr/bin/vimdiff vimdiff /usr/bin/vim-nox.exe \
+	--slave   /usr/bin/rvim rvim /usr/bin/vim-nox.exe \
+	--slave   /usr/bin/rview rview /usr/bin/vim-nox.exe
