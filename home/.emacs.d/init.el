@@ -1,6 +1,16 @@
 ; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
 
 ;; ------------------------------------------------------------------------
+;; @ load-path
+
+   ;; For emacs-24.4
+   (let ((dir (expand-file-name (concat (getenv "INST_DIR") "/app/emacs/site-lisp"))))
+     (if (member dir load-path) nil
+       (setq load-path (cons dir load-path))
+       (let ((default-directory dir))
+	 (load (expand-file-name "subdirs.el") t t t))))
+
+;; ------------------------------------------------------------------------
 ;; @ coding system
 
    ;; 日本語入力のための設定
@@ -467,8 +477,11 @@
 
 ;; ------------------------------------------------------------------------
 ;; @ menu-tree
-   (setq menu-tree-coding-system 'utf-8)
-   (require 'menu-tree)
+
+   ;; cannot use for emacs-24.4
+
+   ;; (setq menu-tree-coding-system 'utf-8)
+   ;; (require 'menu-tree)
 
 ;; ------------------------------------------------------------------------
 ;; @ migemo/cmigemo
